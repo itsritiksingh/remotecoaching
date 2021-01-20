@@ -12,7 +12,7 @@ steps:
     args:
       - "run"
       - "deploy"
-      - "examiner"
+      - "remotecochingbackend"
       - "--image"
       - "gcr.io/$PROJECT_ID/remotecochingbackend:$COMMIT_SHA"
       - "--region"

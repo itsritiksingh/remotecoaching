@@ -9,6 +9,7 @@ const mongoose = require("mongoose");
 const path = require("path")
 const jwt = require("jsonwebtoken");
 const AdminBro = require("admin-bro");
+const redisAdapter = require('socket.io-redis');
 const bcrypt = require("bcrypt");
 const AdminBroExpress = require("@admin-bro/express");
 const AdminBroMongoose = require("@admin-bro/mongoose");
@@ -18,6 +19,8 @@ const meetingModel = require("./schema").meetingModel;
 const userRouter = require("./Routes/userRouter");
 const meetingRouter = require("./Routes/meetingRouter");
 
+
+io.adapter(redisAdapter({host: 'localhost', port: 6379}))
 mongoose
   .connect(
     "mongodb+srv://root:root@cluster0-zcmfs.mongodb.net/remotecoaching?retryWrites=true&w=majority",

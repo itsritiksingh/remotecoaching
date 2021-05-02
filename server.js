@@ -4,7 +4,9 @@ const http = require("http");
 const socketio = require("socket.io");
 const app = express();
 const server = http.createServer(app);
-const io = socketio(server);
+const io = socketio(server,{
+  transports: ['websocket']
+});
 const mongoose = require("mongoose");
 const path = require("path")
 const jwt = require("jsonwebtoken");

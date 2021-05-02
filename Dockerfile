@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --no-cache nodejs npm redis
+RUN apk add --no-cache nodejs npm
 
 # WORKDIR /app
 
@@ -41,4 +41,4 @@ EXPOSE 5000
 # CMD [ "pm2-runtime","start","server.js","-i","0" ]
 
 #Deploying App With redis
-CMD ["sh", "-c", "redis-server > /dev/null 2>&1 & pm2-runtime start server.js -i 0"]
+CMD ["pm2-runtime start server.js -i 0"]

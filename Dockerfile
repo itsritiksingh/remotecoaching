@@ -38,7 +38,7 @@ COPY . /app
 
 EXPOSE 5000
 
-# CMD [ "pm2-runtime","start","server.js","-i","0" ]
+CMD [ "pm2-runtime","start","server.js","-i","0" ]
 
 #Deploying App With redis
-CMD ["pm2-runtime start server.js -i 0"]
+# CMD ["pm2-runtime start server.js -i 0"]

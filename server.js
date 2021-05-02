@@ -157,7 +157,6 @@ io.on("connect", (socket) => {
   //   // }
   // })
   socket.on("join-room", (roomId, userId) => {
-    console.log("user connected room :"+ roomId + " userId"+userId)
     socket.join(roomId);
     socket.to(roomId).broadcast.emit("user-connected", userId);
     socket.on("disconnect", () => {

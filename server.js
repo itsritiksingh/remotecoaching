@@ -20,7 +20,7 @@ const userRouter = require("./Routes/userRouter");
 const meetingRouter = require("./Routes/meetingRouter");
 
 
-io.adapter(redisAdapter({host: 'localhost', port: 6379}))
+io.adapter(redisAdapter({host: '35.222.176.78', port: 6379}))
 mongoose
   .connect(
     "mongodb+srv://root:root@cluster0-zcmfs.mongodb.net/remotecoaching?retryWrites=true&w=majority",

@@ -38,8 +38,8 @@ COPY . /app
 
 EXPOSE 5000
 
-CMD [ "nodemon","server.js"]
-# CMD [ "pm2-runtime","start","server.js","-i","0" ]
+# CMD [ "nodemon","server.js"]
+CMD [ "pm2-runtime","start","server.js","-i","0" ]
 
 #Deploying App With redis
 # CMD ["pm2-runtime start server.js -i 0"]

@@ -21,7 +21,7 @@ function SignUp() {
       if (data.status === 200) {
         setDidRedirect(true);
       }else {
-        return <Alert closable="true" type="error" description="Wrong credentials" />
+        return <Alert closable="true" type="error" description="Something seems not right" />
       }
     });
   };

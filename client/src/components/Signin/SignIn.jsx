@@ -1,7 +1,7 @@
-import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import React,{useState} from "react";
+import { Link } from "react-router-dom";
 import "./signIn.css";
-import { Form, Input, Row, Col, Typography, Divider, Button } from "antd";
+import { Form, Input, Row, Col, Typography, Divider, Button,Alert } from "antd";
 import { SolutionOutlined, LockOutlined } from "@ant-design/icons";
 
 import { signin } from "../../helper/auth";
@@ -9,11 +9,16 @@ import { signin } from "../../helper/auth";
 const { Title } = Typography;
 function SignIn() {
   const onSubmit = (values) => {
-    signin(values).then((data) => {
-      console.log(data);
+    signin(values).catch((data) => {
+      // if (data.status !== 200) {
+        setAlert(true)
+      // }
     });
   };
+  const [alert,setAlert] = useState("none");
   return (
+    <>
+    <div style={{display: alert,position:"absolute",left:0,right:0,top:30,margin:"auto",width:"30%"}}>  <Alert banner="true" closable="true" onClose={() => setAlert(false)} type="error" message="Credential are not correct" /></div>
     <div className="auth-page-container">
       <Row style={{ width: "100%" }} justify="center">
         <Col md={{ span: 8 }}>
@@ -75,6 +80,7 @@ function SignIn() {
         </Col>
       </Row>
     </div>
+    </>
   );
 }
 

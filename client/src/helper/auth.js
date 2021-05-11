@@ -36,11 +36,11 @@ export const signin = (data) => {
     })
     .catch((err) => {
       if (err.request) {
-        return err.request;
+        throw new Error(err.request);
       } else if (err.response) {
-        return err.response;
+        throw  new Error(err.response);
       } else {
-        return err;
+        throw new Error(err);
       }
     });
 };

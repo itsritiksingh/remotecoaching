@@ -36,8 +36,8 @@ function SignIn() {
                 ]}
               >
                 <Input
-                  prefix={<UserOutlined className="site-form-item-icon" />}
-                  placeholder="email"
+                  prefix={<SolutionOutlined className="site-form-item-icon" />}
+                  placeholder="Email"
                 />
               </Form.Item>
               <Form.Item

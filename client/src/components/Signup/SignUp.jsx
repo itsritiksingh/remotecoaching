@@ -66,7 +66,7 @@ function SignUp() {
                     prefix={
                       <SolutionOutlined className="site-form-item-icon" />
                     }
-                    placeholder="Username"
+                    placeholder="Email"
                   />
                 </Form.Item>
                 <Form.Item

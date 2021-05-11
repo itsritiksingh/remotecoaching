@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
-
+import {Alert } from "antd"
 import "../Signin/signIn.css";
 
 import { Form, Input, Row, Col, Typography, Divider, Button } from "antd";
@@ -13,7 +13,6 @@ import {
 import { signup } from "../../helper/auth";
 
 const { Title } = Typography;
-const { TextArea } = Input;
 
 function SignUp() {
   const [didRedirect, setDidRedirect] = useState(false);
@@ -21,6 +20,8 @@ function SignUp() {
     signup(values).then((data) => {
       if (data.status === 200) {
         setDidRedirect(true);
+      }else {
+        return <Alert closable="true" type="error" description="Wrong credentials" />
       }
     });
   };

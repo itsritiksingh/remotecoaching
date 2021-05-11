@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Redirect } from "react-router-dom";
 import "./signIn.css";
 import { Form, Input, Row, Col, Typography, Divider, Button } from "antd";
-import { UserOutlined, LockOutlined } from "@ant-design/icons";
+import { SolutionOutlined, LockOutlined } from "@ant-design/icons";
 
 import { signin } from "../../helper/auth";
 
